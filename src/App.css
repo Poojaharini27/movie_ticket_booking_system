@@ -1,38 +1,1413 @@
-.App {
+/* Body and general styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;  /* White background */
+  color: black;  /* Black text for other elements */
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;  /* White background for header */
+  color: black;  /* Black text for header */
+  padding: 20px;
+}
+
+.main-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f6b800;  /* Golden color for title */
+}
+
+/* Auth button */
+.main-auth-btn {
+  background-color: #ffc107; /* Golden background */
+  padding: 10px 20px;
+  border: 2px solid #ffc107;  /* Golden border */
+  color: black;  /* Black text */
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.main-auth-btn:hover {
+  border: 2px solid #ffc107;
+  background-color: #faf9f8;  /* Slightly darker gold on hover */
+  color: #f6b800;  /* White text on hover */
+}
+
+.main-auth-btn a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.main-auth-btn div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Filters section */
+.main-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f2d066;  /* Light golden yellow for filter */
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-filters label {
+  font-size: 1rem;
+  margin-right: 10px;
+  color: black;  /* Black text for filter labels */
+}
+
+.main-filters select {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #f2d066;  /* Light golden border */
+  border-radius: 5px;
+  outline: none;
+  background-color: #ffffff;  /* White background for input */
+  color: black;  /* Black text */
+}
+
+.main-filters select:focus {
+  border-color: #f2d066;  /* Focus border in light gold */
+}
+
+.main-filters select:focus, .main-filters select:hover {
+  background-color: #ffffff; /* White background */
+  border-color: #f6b800;  /* Yellow border */
+  color: black;  
+}
+
+/* Logout Button */
+.main-auth-btn div button {
+  background-color: #f6b800;  /* Yellow background for logout button */
+  color: black;  /* Black text */
+  padding: 8px 16px;
+  border: 2px solid #f6b800; /* Yellow border */
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.main-auth-btn div button:hover {
+  background-color: #faf9f8;  /* Slightly darker gold on hover */
+  color: #f6b800;  /* Yellow text on hover */
+}
+
+/* Movie List Section */
+.main-movie-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px; /* Increased space between movie blocks */
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #ffffff;  /* White background */
+}
+
+.main-movie-block {
+  background-color: #ffffff;  /* White background */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border: 2px solid #f6b800;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-movie-block:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.main-movie-block img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.main-movie-details {
+  padding: 15px;
+}
+
+.main-movie-details h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #000000;  /* Golden color for movie titles */
+}
+
+.main-movie-details p {
+  font-size: 1rem;
+  color: black;  /* Black text for movie details */
+  margin: 5px 0;
+}
+
+/* No Movies Available */
+.main-movie-container p {
+  font-size: 1.2rem;
+  color: #777;
+  text-align: center;
+  grid-column: span 2;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .main-filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-movie-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .main-movie-details h3 {
+    font-size: 1rem;
+  }
+
+  .main-movie-details p {
+    font-size: 0.9rem;
+  }
+}
+/*======================================Signup=========================================================*/
+/* Global Styles */
+
+
+/* Signup Container */
+.signup {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 3px solid #f6b800;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px; /* Ensures the form doesn't get too wide */
+  box-sizing: border-box;
+  margin-inline-start: 450px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* Heading */
+.signup h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Form Fields */
+.signup-form-col {
+  
+  margin-bottom: 20px;
+}
+
+/* Input Fields */
+.signup-form-col input,
+.signup-form-col select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  font-size: 1rem;
+  border: 1px solid #f6b800;
+  border-radius: 5px;
+  box-sizing: border-box;
+
+}
+
+/* Password Error Message */
+small {
+  color: red;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Signup Button */
+.signup-btn {
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 14px 20px;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+}
+
+/* Button Hover Effect */
+.signup-btn:hover {
+  background-color: #fbfaf9;
+  border: 2px solid #f6b800;
+  color:#f6b800 ;
+
+}
+
+/* Link to Signin Page */
+.signup p {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.signup p a {
+  color: #f6b800;
+  text-decoration: none;
+}
+
+.signup p a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .signup {
+      padding: 20px;
+      max-width: 90%; /* Ensures it's not too wide */
+  }
+
+  .signup h2 {
+      font-size: 1.6rem;
+  }
+
+  .signup-form-col input,
+  .signup-form-col select {
+      padding: 10px;
+      font-size: 1rem; /* Slightly larger font for readability */
+  }
+
+  .signup-btn {
+      font-size: 1rem;
+      padding: 12px;
+  }
+}
+/**?/
+.signin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Signin Form */
+.signin-form {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 3px solid #f6b800;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px; /* Ensures the form doesn't get too wide */
+  box-sizing: border-box;
+  margin-top: 170px;
+  margin-inline-start: 450px;
+  margin-bottom: 50px;
+}
+
+/* Heading */
+.signin-form h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Form Fields */
+.signin-email, .signin-password {
+  margin-bottom: 20px;
+}
+
+/* Input Fields */
+.signin-email input,
+.signin-password input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  font-size: 1rem;
+  border: 1px solid #f6b800;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Button */
+.btn {
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 14px 20px;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+}
+
+/* Button Hover Effect */
+.btn:hover {
+  background-color: #fbfaf9;
+  border: 2px solid #f6b800;
+  color: #f6b800;
+}
+
+/* Link to Signup Page */
+.signin p {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.signin p a {
+  color: #f6b800;
+  text-decoration: none;
+}
+
+.signin p a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .signin-form {
+      padding: 20px;
+      max-width: 90%; /* Ensures it's not too wide */
+  }
+
+  .signin-form h2 {
+      font-size: 1.6rem;
+  }
+
+  .signin-email input,
+  .signin-password input {
+      padding: 10px;
+      font-size: 1rem; /* Slightly larger font for readability */
+  }
+
+  .btn {
+      font-size: 1rem;
+      padding: 12px;
+  }
+}
+/*===========================================Admin========================================================*/
+/* Admin panel container */
+.admin {
+  background-color: #f4f4f4;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  position: relative; /* Enables absolute positioning inside */
+  /* Replace with the URL of your popcorn image */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Avoids image repetition */
+}
+
+/* Header section with flexbox for username and logout button */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Aligns username left and logout right */
+  position: absolute; /* Fix the header at the top */
+  top: 20px; /* Adds space from the top */
+  left: 0;
+  right: 0;
+  padding: 0 20px;
+}
+
+/* Admin username styles */
+.admin-username {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #000000;
+  font-size: 24px; /* Increased font size */
+  font-weight: bold;
+}
+
+/* Admin logout button styles */
+.admin-logout-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #f6b800;
+  color: white;
+  padding: 12px 24px; /* Adjusted for larger button */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px; /* Increased font size */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.admin-logout-btn:hover {
+  background-color: #fbfaf9;
+  color: #f6b800;
+  border: 2px solid #f6b800;
+  transform: translateY(-3px);
+}
+
+/* Option container */
+.option {
+  display: flex;
+  flex-wrap: wrap; /* Allows buttons to wrap if needed */
+  gap: 30px; /* Increased spacing between buttons */
+  align-items: center;
+  margin-top: 120px; /* Space to accommodate the fixed header */
+  justify-content: center;
+}
+
+/* Category container */
+.category {
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Admin button styles */
+.admin-btn {
+  background-color: #f6b800;
+  color: white;
+  font-size: 20px; /* Increased font size for larger buttons */
+  font-weight: bold;
+  padding: 20px 40px; /* Larger padding for big-box effect */
+  border: none;
+  border-radius: 10px; /* Slightly rounded corners */
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-sizing: border-box;
+  width: 300px; /* Fixed width for big box buttons */
+  height: 150px; /* Fixed height for big box buttons */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Admin button hover effect */
+.admin-btn:hover {
+  background-color: #fbfaf9;
+  color: #f6b800;
+  border: 2px solid #f6b800;
+  transform: translateY(-3px);
+}
+
+/* Admin button active state */
+.admin-btn:active {
+  transform: translateY(0);
+}
+
+/* Link styles inside buttons */
+.admin-btn a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Option container responsiveness */
+@media (max-width: 768px) {
+  .option {
+    gap: 20px; /* Adjusted for smaller screens */
+  }
+
+  .admin-btn {
+    font-size: 16px;
+    padding: 16px 30px; /* Adjusted padding for responsiveness */
+    width: 240px; /* Reduced width */
+    height: 120px; /* Reduced height */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*===============================Add movie=======================================*/
+/* Add movie page container */
+/* Add Movie Form */
+/* Add Movie Form */
+.addmovie-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 3px solid #f6b800;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form title */
+.addmovie-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form columns */
+.addmovie-form-col {
+  margin-bottom: 20px;
+}
+
+/* Form labels */
+.addmovie-form-col label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Form input fields */
+.addmovie-form-field {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 1rem;
+  border: 1px solid #f6b800; /* Changed border color to yellow */
+  border-radius: 4px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+/* Dropdown field */
+.addmovie-form-col select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 1rem;
+  border: 1px solid #f6b800; /* Changed border color to yellow */
+  border-radius: 4px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+/* Description textarea (adjusted size) */
+.addmovie-form-col textarea {
+  width: 100%;
+  height: 150px; /* Increased height of the description box */
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 1rem;
+  border: 1px solid #f6b800; /* Changed border color to yellow */
+  border-radius: 4px;
+  background-color: #fff;
+  box-sizing: border-box;
+  resize: vertical; /* Allow vertical resizing */
+}
+
+/* Submit button */
+.addmovie-submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2rem;
+  background-color: #f6b800; /* Changed background color to yellow */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.addmovie-submit-btn:hover {
+  background-color: #fbfaf9; /* Light background on hover */
+  border: 2px solid #f6b800; /* Yellow border on hover */
+  color: #f6b800; /* Yellow text color */
+}
+
+/* Image upload field */
+.addmovie-form-col input[type="file"] {
+  margin-top: 5px;
+}
+
+/* Display the checkmark after successful upload */
+.addmovie-form-col span {
+  margin-left: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+/* Form Field Alignment */
+.addmovie-form-col input[type="text"],
+.addmovie-form-col input[type="date"],
+.addmovie-form-col select {
+  display: block;
+  width: 100%;
+}
+
+.addmovie-form-col button[type="submit"] {
+  display: inline-block;
+  width: 100%;
+  background-color: #f6b800; /* Yellow background for button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for submit button */
+.addmovie-form-col button[type="submit"]:hover {
+  background-color: #fbfaf9; /* Light background on hover */
+  border: 2px solid #f6b800; /* Yellow border on hover */
+  color: #f6b800; /* Yellow text color */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .addmovie-container {
+    padding: 10px;
+  }
+  
+  .addmovie-title {
+    font-size: 1.5rem;
+  }
+
+  .addmovie-submit-btn {
+    font-size: 1rem;
+  }
+}
+/*=======================MovieDetails========================================*/
+.movie-detail {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  border: 2px solid #ffc107; /* Yellow border */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
+}
+
+.movie-detail-header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffc107; /* Yellow for headers */
+}
+
+.movie-detail-poster-container {
+  display: inline-block;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Keep focus on the poster */
+}
+
+.movie-detail-poster {
+  width: 300px;
+  height: auto;
+  display: block;
+  border: 3px solid #ffc107; /* Yellow border for poster */
+}
+
+.movie-detail-action-btn {
+  margin-top: 10px;
+}
+
+.movie-detail-action-btn button {
+  background-color: #ffc107; /* Yellow button */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.movie-detail-action-btn button:hover {
+  background-color: #fff; /* White background on hover */
+  border: 2px solid #f6b800; /* Darker yellow border */
+  color: #ffc107; /* Yellow text on hover */
+  transition: background-color 0.3s;
+}
+
+.movie-detail-info {
+  margin-top: 20px;
+}
+
+.movie-description h2,
+.movie-detail-meta-data h2,
+.movie-detail-cast h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #ffc107; /* Yellow for section headers */
+}
+
+.movie-description p,
+.movie-detail-meta-data p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #555; /* Neutral color for readability */
+}
+
+.movie-detail-cast-images {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.actor-container {
+  text-align: center;
+}
+
+.actor-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 3px solid #ffc107; /* Yellow border for cast images */
+}
+
+.actor-name {
+  margin-top: 8px;
+  font-size: 14px;
+  color: black; /* Darker yellow for names */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/*=================Theatre List=========================*/
+.theatre-list-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.theatre-list-title {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+.theatre-list-select {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.theatre-list-subtitle {
+  text-align: center;
+  font-size: 20px;
+  color: #555;
+  margin-top: 20px;
+}
+
+.theatre-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.theatre-card {
+  background: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.theatre-name {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.theatre-book-btn {
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.theatre-book-btn:hover {
+  background-color: #fff;
+  color: #ffc107;
+  border: 2px solid #ffc107;
+}
+
+.no-theatres-message {
+  text-align: center;
+  font-size: 16px;
+  color: #888;
+  margin-top: 20px;
+}
+/*================BookTickets=============================*/
+/* General Styling */
+.booktickets-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  margin: 50px auto;
+}
+
+/* Heading */
+.booktickets-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffc107;
+}
+
+/* Movie Details */
+.movie-details p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.select-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+/* Date Selection */
+.date-selection {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.date-item {
+  padding: 10px;
+  border: 2px solid #ffc107;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.3s ease;
+  color: #ffc107;
+}
+
+.date-item.selected {
+  background-color: #ffc107;
+  color: black;
+}
+
+/* Time Slot Selection */
+.time-slot-selection {
+  margin-bottom: 20px;
+}
+
+.time-slot-selection p {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.time-item {
+  padding: 10px;
+  border: 1px solid #ffc107;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.3s ease;
+}
+
+.time-item.selected {
+  background-color: #ffc107;
+}
+
+/* Seat Grid */
+.seat-grid {
+  display: grid;
+  grid-template-columns: 50px repeat(7, 50px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.seat-grid div {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid #ffc107;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.seat.blocked {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.seat.selected {
+  background-color: #ffc107;
+}
+
+/* Button */
+.proceed-button {
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 14px 20px;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+}
+
+.proceed-button:hover {
+  background-color: #fbfaf9;
+  border: 2px solid #f6b800;
+  color: #f6b800;
+}
+
+/* User Message */
+.user-message {
+  text-align: center;
+  font-size: 1rem;
+  color: red;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .booktickets-container {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .booktickets-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .date-selection, .time-slot-selection {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .seat-grid {
+    grid-template-columns: repeat(5, 40px);
+  }
+
+  .seat {
+    width: 35px;
+    height: 35px;
+  }
+
+  .proceed-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2rem;
+  background-color: #f6b800; /* Changed background color to yellow */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;/* Optional: Set a maximum width for button */
+}
+
+
+}
+
+/*=========Payment=======*/
+/* Payment Page Container */
+.payment.acc {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ /* Yellow border */
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* Heading */
+.payment.acc h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Details Section */
+.payment.acc p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #555; /* Slightly lighter color for the details */
+}
+
+.payment.acc strong {
+  font-weight: bold;
+  color: #f6b800; /* Yellow highlight for labels */
+}
+
+/* Payment Button Styles */
+.payment.acc button {
+  background-color: #ffc107; /* Yellow button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, border 0.3s ease;
+  margin-top: 20px;
+}
+
+/* Button Hover Effect */
+.payment.acc button:hover {
+  background-color: #fbfaf9;
+  border: 2px solid #f6b800;
+  color: #f6b800;
+}
+
+/* Payment Status Message */
+.payment.acc p.message {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.payment.acc p.message.error {
+  color: red;
+}
+
+.payment.acc p.message.success {
+  color: green;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .payment.acc {
+      padding: 20px;
+      max-width: 90%; /* Ensures it's not too wide on small screens */
+  }
+
+  .payment.acc h2 {
+      font-size: 1.6rem;
+  }
+
+  .payment.acc p {
+      font-size: 1rem;
+  }
+
+  .payment.acc button {
+      font-size: 1rem;
+      padding: 12px;
+  }
+}
+/*============card payment================*/
+/* CardPayment Page Container */
+.card-payment {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  margin: 50px auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Heading */
+.card-payment h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Message Styling */
+.card-payment p {
+  font-size: 1rem;
+  color: #ff0000; /* Red for error messages */
+  margin-top: 10px;
+}
+
+.card-payment p.success {
+  color: green;
+}
+
+/* Form Styling */
+.card-payment form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+}
+
+/* Stripe CardElement Style */
+.card-payment .StripeElement {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.card-payment .StripeElement:focus {
+  border-color: #f6b800; /* Yellow border when focused */
+}
+
+/* Button Styling */
+.card-payment button {
+  background-color: #f6b800; /* Yellow button */
   color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.card-payment button:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card-payment button:hover:enabled {
+  background-color: white; 
+  border: 2px solid #f6b800;
+  color: #ffb200;/* Darker yellow when hovered */
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-payment {
+    padding: 20px;
+    max-width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .card-payment h2 {
+    font-size: 1.6rem;
+  }
+
+  .card-payment button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+/*===================Bookedstatus================================*/
+/* BookedStatus Page Container */
+.booked-status {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  margin: 50px auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Heading */
+.booked-status h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Payment Status Container */
+.payment-status {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-status.success {
+  color: green;
+}
+
+.payment-status.failed {
+  color: red;
+}
+
+/* Icon Styling */
+.payment-status .icon {
+  margin-right: 10px;
+}
+
+/* Amount Styling */
+.booked-status p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Button Styling */
+.booked-status button {
+  background-color: #f6b800; /* Yellow button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+}
+
+.booked-status button:hover {
+  background-color: #ffb200; /* Darker yellow on hover */
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .booked-status {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .booked-status h2 {
+    font-size: 1.6rem;
+  }
+
+  .booked-status button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+/*================Update -movielist============================*/
+.movie-item {
+  position: relative;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.delete-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: red;
+  font-size: 20px;
+}
+
+.delete-icon:hover {
+  opacity: 0.7;
+}
+/*===========================update============================*/
+.addmovie-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 3px solid #f6b800;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.addmovie-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.addmovie-form-col {
+  margin-bottom: 20px;
+}
+
+.addmovie-form-col label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.addmovie-form-field {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 1rem;
+  border: 1px solid #f6b800;
+  border-radius: 4px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.addmovie-submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2rem;
+  background-color: #f6b800;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.addmovie-submit-btn:hover {
+  background-color: #fbfaf9;
+  border: 2px solid #f6b800;
+  color: #f6b800;
+}
+
+@media (max-width: 768px) {
+  .addmovie-container {
+    padding: 10px;
+  }
+
+  .addmovie-title {
+    font-size: 1.5rem;
+  }
+
+  .addmovie-submit-btn {
+    font-size: 1rem;
   }
 }
